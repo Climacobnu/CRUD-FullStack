@@ -69,7 +69,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
 
     if (onEdit) {
       await axios
-        .put("http://localhost:8800/" + onEdit.id, {
+        .put("http://localhost:8001/" + onEdit.id, {
           nome: user.nome.value,
           email: user.email.value,
           fone: user.fone.value,
@@ -79,7 +79,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         .catch(({ data }) => toast.error(data));
     } else {
       await axios
-        .post("http://localhost:8800", {
+        .post("http://localhost:8001", {
           nome: user.nome.value,
           email: user.email.value,
           fone: user.fone.value,
@@ -114,8 +114,43 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       </InputArea>
       <InputArea>
         <Label>Data de Nascimento</Label>
-        <Input name="data_nascimento" type="date" />
+        <Input name="data_nascimento" type="date" id='data_nascimento'/>
       </InputArea>
+      {/* <InputArea>
+        <Label>Usuário Id</Label>
+        <Input usuario_id="usuario_id" id='usuario_id' />
+      </InputArea>
+      <InputArea>
+        <Label>Cep</Label>
+        <Input cep="cep" id='cep'/>
+      </InputArea>
+     
+      <InputArea>
+        <Label>Uf</Label>
+        <Input uf="uf" id='uf' />
+      </InputArea>
+      <InputArea>
+        <Label>Cidade</Label>
+        <Input cidade="cidade" id='cidade' />
+      </InputArea>
+      <InputArea>
+        <Label>Logradouro</Label>
+        <Input logradouro="logradouro" id='logradouro' />
+      </InputArea>
+      <InputArea>
+        <Label>Bairro</Label>
+        <Input bairro="bairro" id='bairro'  />
+      </InputArea>
+      <InputArea>
+        <Label>Número</Label>
+        <Input numero="numero" id='numero'  />
+      </InputArea>
+      <InputArea>
+        <Label>Complemento</Label>
+        <Input complemento="complemento" id='complemento'  />
+      </InputArea> */}
+
+      
 
       <Button type="submit">SALVAR</Button>
     </FormContainer>
